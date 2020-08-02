@@ -30,5 +30,5 @@ func _run() -> void:
 	for dirpath in directories:
 		files.append_array(Collector.find_files(dirpath, patterns, is_recursive))
 
-	var json : String = Collector.print_pretty_json(Collector.get_reference(files, false, prefix))
+	var json : String = Collector.print_pretty_json(Collector.get_reference(files, true, prefix))
 	Collector.save_text(save_path, json)
